@@ -9,9 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     name: njsscan check
     steps:
-    - uses: nodejsscan
-    - name: njsscan
+    - name: Checkout the code
+      uses: actions/checkout@v2
+    - name: nodejsscan scan
       id: njsscan
-      uses: ajinabraham/njsscan-action@v6
+      uses: ajinabraham/njsscan-action@master
       with:
         args: '.'
